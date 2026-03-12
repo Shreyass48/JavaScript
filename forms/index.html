@@ -1,0 +1,58 @@
+<!-- 
+1. Reading values from form
+2. Form validation using custom js(conditional validation)
+3. Using HTML5 form validation attributes(Inline validation)
+4. Preventing form submission
+5. pattarn and regex validation 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../forms/script.js"></script>
+    <title>Form</title>
+    <style>
+      #hide {
+        display: none;
+      }
+
+      p {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        placeholder="Username"
+        pattern="[A-Za-z]{2-8}"
+      />
+      <br />
+      <div id="hide">
+        <p>username is required</p>
+      </div>
+      <input type="email" id="email" name="email" placeholder="Email" />
+      <br />
+      <select required name="gender" id="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+      <br />
+      <textarea
+        id="comments"
+        name="comments"
+        placeholder="Your comments here..."
+        minlength="10"
+        maxlength="99"
+      ></textarea>
+      <br />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>

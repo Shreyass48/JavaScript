@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Theme Switcher</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+
+      /* Light theme (default) */
+      body.light {
+        background-color: #ffffff;
+        color: #333333;
+      }
+
+      /* Dark theme */
+      body.dark {
+        background-color: #1a1a1a;
+        color: #ffffff;
+      }
+
+      .header {
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        margin-bottom: 40px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      /* Toggle switch container */
+      .theme-toggle {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .theme-toggle label {
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      /* Toggle switch styling */
+      .switch {
+        position: relative;
+        width: 60px;
+        height: 30px;
+      }
+
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 30px;
+      }
+
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 22px;
+        width: 22px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+      }
+
+      input:checked + .slider {
+        background-color: #4caf50;
+      }
+
+      input:checked + .slider:before {
+        transform: translateX(30px);
+      }
+    </style>
+  </head>
+  <body class="light">
+    <div class="header">
+      <h1>Theme Switcher Demo</h1>
+      <div class="theme-toggle">
+        <label for="themeSwitch">🌙 Dark Mode</label>
+        <label class="switch">
+          <input type="checkbox" id="themeSwitch" />
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
